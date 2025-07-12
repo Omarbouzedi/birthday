@@ -1,0 +1,879 @@
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Happy Birthday Asma 🎉❤️</title>
+  <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Montserrat:wght@400;700&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Montserrat:wght@400;700&display=swap" rel="stylesheet" />
+  <style>
+    /* Base and reset */
+    * {
+      box-sizing: border-box;
+    }
+    body, html {
+      margin: 0;
+      padding: 0;
+      height: 100%;
+      font-family: 'Montserrat', sans-serif;
+      background: linear-gradient(135deg, #ffdde1 0%, #ee9ca7 100%);
+      overflow-x: hidden;
+      color: #fff;
+      scroll-behavior: smooth;
+    }
+
+    header {
+      position: relative;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+
+      padding: 0 20px;
+      text-align: center;
+      z-index: 2;
+    }
+    h1 {
+      font-family: 'Great Vibes', cursive;
+      font-size: 5rem;
+      margin-bottom: 0.5rem;
+      animation: heartbeat 2s infinite ease-in-out;
+      text-shadow: 0 0 10px #ff69b4;
+    }
+    @keyframes heartbeat {
+      0%, 100% { transform: scale(1); }
+      50% { transform: scale(1.15); }
+    }
+    .message-cycle {
+      font-size: 1.7rem;
+      max-width: 700px;
+      margin-bottom: 3rem;
+      font-weight: 600;
+      line-height: 1.4;
+      min-height: 4.5em;
+      opacity: 0;
+      animation: fadeinout 12s infinite;
+      text-shadow: 0 0 5px rgba(255, 105, 180, 0.8);
+      position: relative;
+      height: 4.5em;
+    }
+    @keyframes fadeinout {
+      0%, 20%, 100% { opacity: 0; }
+      30%, 70% { opacity: 1; }
+      80%, 90% { opacity: 0; }
+    }
+    .message-cycle span {
+      position: absolute;
+      width: 100%;
+      left: 0;
+      top: 0;
+      opacity: 0;
+      animation: messagefade 12s infinite;
+    }
+    .message-cycle span:nth-child(1) { animation-delay: 0s; }
+    .message-cycle span:nth-child(2) { animation-delay: 4s; }
+    .message-cycle span:nth-child(3) { animation-delay: 8s; }
+    @keyframes messagefade {
+      0%, 20%, 100% { opacity: 0; }
+      30%, 70% { opacity: 1; }
+      80%, 90% { opacity: 0; }
+    }
+
+    /* Music controls */
+    #music-control {
+      background: rgba(255 255 255 / 0.3);
+      border: none;
+      padding: 1rem 2rem;
+      border-radius: 40px;
+      cursor: pointer;
+      color: #fff;
+      font-weight: 700;
+      font-size: 1.2rem;
+      transition: background 0.3s ease;
+      box-shadow: 0 0 15px rgba(255, 105, 180, 0.7);
+      margin-bottom: 30px;
+    }
+    #music-control:hover {
+      background: rgba(255 255 255 / 0.5);
+    }
+
+    /* Sections styling */
+    section {
+      background: rgba(0,0,0,0.2);
+      border-radius: 20px;
+      max-width: 900px;
+      width: 90%;
+      margin: 3rem auto;
+      padding: 3rem 3rem 4rem;
+      box-shadow: 0 8px 28px rgba(0,0,0,0.25);
+      backdrop-filter: blur(12px);
+      opacity: 0;
+      transform: translateY(30px);
+      transition: opacity 0.8s ease, transform 0.8s ease;
+    }
+    section.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+    section h2 {
+      font-family: 'Great Vibes', cursive;
+      font-size: 3rem;
+      margin-bottom: 1.5rem;
+      color: #fff;
+      text-align: center;
+      text-shadow: 0 0 8px rgba(255,105,180,0.9);
+    }
+    .love-letter p {
+      font-size: 1.4rem;
+      line-height: 1.7;
+      color: #ffe6f1;
+      white-space: pre-line;
+      max-width: 700px;
+      margin: 0 auto;
+      font-weight: 600;
+      letter-spacing: 0.03em;
+    }
+
+    /* Typed letter effect */
+    .typed-text {
+      border-right: 0.15em solid #ff69b4;
+      white-space: nowrap;
+      overflow: hidden;
+      animation: typing 6s steps(60, end) forwards, blink 0.7s step-end infinite alternate;
+      max-width: 700px;
+      margin: 0 auto;
+      font-size: 1.4rem;
+      line-height: 1.7;
+      font-weight: 600;
+    }
+    @keyframes typing {
+      from { width: 0; }
+      to { width: 100%; }
+    }
+    @keyframes blink {
+      50% { border-color: transparent; }
+    }
+
+    /* Gallery styles */
+    .gallery {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 20px;
+      max-width: 900px;
+      margin: 0 auto;
+    }
+    .gallery img {
+      width: 200px;
+      height: 280px;
+      object-fit: cover;
+      border-radius: 20px;
+      box-shadow: 0 6px 20px rgba(255,105,180,0.5);
+      cursor: pointer;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      border: 3px solid transparent;
+    }
+    .gallery img:hover,
+    .gallery img:focus {
+      transform: scale(1.1);
+      box-shadow: 0 15px 35px rgba(255,105,180,0.9);
+      border-color: #ff69b4;
+      z-index: 10;
+      outline: none;
+    }
+
+    /* Modal for image enlarge */
+    #modal {
+      position: fixed;
+      top: 0; left: 0;
+      width: 100vw;
+      height: 100vh;
+      background: rgba(0,0,0,0.9);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity 0.3s ease;
+      z-index: 10000;
+    }
+    #modal.visible {
+      opacity: 1;
+      pointer-events: auto;
+    }
+    #modal img {
+      max-width: 90%;
+      max-height: 90%;
+      border-radius: 20px;
+      box-shadow: 0 0 40px #ff69b4;
+    }
+    #modal:focus {
+      outline: none;
+    }
+
+    /* Hidden surprise */
+    #surprise {
+      display: none;
+      text-align: center;
+      font-size: 1.6rem;
+      color: #ffcee4;
+      margin-top: 2rem;
+      font-style: italic;
+      animation: fadeInSurprise 1.5s ease forwards;
+    }
+    @keyframes fadeInSurprise {
+      from {opacity: 0; transform: translateY(20px);}
+      to {opacity: 1; transform: translateY(0);}
+    }
+
+    /* Input styles */
+    #password-input {
+      padding: 0.8rem 1.2rem;
+      font-size: 1.1rem;
+      border-radius: 15px;
+      border: none;
+      max-width: 320px;
+      margin: 0 auto 1rem auto;
+      display: block;
+      text-align: center;
+      font-weight: 600;
+    }
+    #unlock-btn {
+      padding: 0.9rem 2.5rem;
+      border-radius: 50px;
+      border: none;
+      background: #ff69b4;
+      color: #fff;
+      font-weight: 700;
+      font-size: 1.2rem;
+      cursor: pointer;
+      box-shadow: 0 0 15px #ff69b4;
+      transition: background 0.3s ease;
+      display: block;
+      margin: 0 auto;
+    }
+    #unlock-btn:hover {
+      background: #ff3d8b;
+    }
+
+    /* Floating hearts animation */
+    .heart {
+      position: fixed;
+      bottom: -50px;
+      width: 25px;
+      height: 25px;
+      background: url('data:image/svg+xml;utf8,<svg fill="%23ff69b4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41 0.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/></svg>') no-repeat center/contain;
+      opacity: 0.7;
+      animation: floatUp linear forwards;
+      pointer-events: none;
+      z-index: 9999;
+    }
+    @keyframes floatUp {
+      to {
+        transform: translateY(-120vh) rotate(360deg);
+        opacity: 0;
+      }
+    }
+
+    /* Responsive */
+    @media (max-width: 600px) {
+      h1 {
+        font-size: 3rem;
+      }
+      .message-cycle {
+        font-size: 1.2rem;
+      }
+      .gallery img {
+        width: 45vw;
+        height: 60vw;
+      }
+      section {
+        padding: 2rem 1.5rem 3rem;
+      }
+    }
+        .quiz-section {
+      text-align: center;
+      padding: 3rem 2rem;
+      background: rgba(255,255,255,0.1);
+      margin: 4rem auto;
+      border-radius: 20px;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+      max-width: 800px;
+      color: #fff;
+    }
+    .quiz-section h2 {
+      font-family: 'Great Vibes', cursive;
+      font-size: 2.8rem;
+      margin-bottom: 1rem;
+    }
+    .question {
+      margin-bottom: 2rem;
+    }
+    .question p {
+      font-size: 1.4rem;
+      margin-bottom: 1rem;
+    }
+    .answers button {
+      display: block;
+      margin: 0.3rem auto;
+      padding: 0.8rem 1.5rem;
+      background: #ff69b4;
+      border: none;
+      border-radius: 30px;
+      font-weight: bold;
+      color: #fff;
+      cursor: pointer;
+      transition: background 0.3s;
+    }
+    .answers button:hover {
+      background: #ff3d8b;
+    }
+    #quiz-result {
+      margin-top: 2rem;
+      font-size: 1.6rem;
+      font-weight: 700;
+      color: #ffe6f1;
+      text-shadow: 0 0 5px rgba(255,105,180,0.9);
+    }
+    .love-notes {
+  text-align: center;
+  margin: 5rem auto;
+  padding: 3rem 2rem;
+  background: rgba(255, 255, 255, 0.08);
+  border-radius: 30px;
+  max-width: 700px;
+  color: #fff;
+  box-shadow: 0 0 30px rgba(255, 105, 180, 0.2);
+}
+
+.love-notes h2 {
+  font-family: 'Great Vibes', cursive;
+  font-size: 2.5rem;
+  margin-bottom: 2rem;
+  color: #ffeef5;
+  text-shadow: 0 0 5px #ff69b4;
+}
+
+#note-bubble {
+  font-size: 1.4rem;
+  font-weight: 600;
+  background: #ffb6d9;
+  color: #4b003b;
+  border-radius: 30px;
+  padding: 1.5rem 2rem;
+  max-width: 90%;
+  margin: 0 auto 2rem;
+  animation: fadeNote 1.2s ease-in-out;
+  box-shadow: 0 0 20px rgba(255, 182, 219, 0.7);
+}
+
+.note-form {
+  margin-top: 1rem;
+}
+
+.note-form input {
+  padding: 0.8rem 1.2rem;
+  border-radius: 25px;
+  border: none;
+  width: 70%;
+  font-size: 1rem;
+  margin-bottom: 0.5rem;
+  outline: none;
+}
+
+.note-form button {
+  padding: 0.8rem 1.8rem;
+  border: none;
+  border-radius: 25px;
+  background: #ff69b4;
+  color: white;
+  font-weight: bold;
+  cursor: pointer;
+  box-shadow: 0 0 10px #ff69b4;
+  transition: background 0.3s ease;
+}
+
+.note-form button:hover {
+  background: #ff3d8b;
+}
+
+#note-confirm {
+  font-style: italic;
+  color: #ffeef5;
+  margin-top: 1rem;
+  font-size: 1.1rem;
+}
+
+@keyframes fadeNote {
+  from { opacity: 0; transform: scale(0.95); }
+  to { opacity: 1; transform: scale(1); }
+}
+.memory-game {
+  text-align: center;
+  padding: 3rem 2rem;
+  margin: 4rem auto;
+  max-width: 600px;
+  background: rgba(255,255,255,0.08);
+  border-radius: 30px;
+  box-shadow: 0 0 30px rgba(255, 105, 180, 0.2);
+  color: #fff;
+}
+
+.memory-game h2 {
+  font-family: 'Great Vibes', cursive;
+  font-size: 2.5rem;
+  margin-bottom: 1.5rem;
+  color: #ffeef5;
+}
+
+.game-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 70px);
+  gap: 15px;
+  justify-content: center;
+  margin-bottom: 1rem;
+}
+
+.card {
+  width: 70px;
+  height: 70px;
+  background-color: #ff69b4;
+  border-radius: 15px;
+  font-size: 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  color: transparent;
+  transition: transform 0.3s, background-color 0.3s;
+  box-shadow: 0 0 10px rgba(255, 105, 180, 0.5);
+}
+
+.card.revealed {
+  background-color: #fff;
+  color: #ff69b4;
+  transform: rotateY(180deg);
+}
+
+#game-status {
+  font-size: 1.4rem;
+  font-weight: bold;
+  margin-top: 1rem;
+  color: #ffe6f1;
+}
+
+  </style>
+  <audio id="bg-music" loop autoplay>
+    <source src="https://www.bensound.com/bensound-music/bensound-romantic.mp3" type="audio/mpeg">
+  </audio>
+
+  
+</head>
+<body>
+
+  <header role="banner" aria-label="Birthday Greeting Header">
+    <h1 tabindex="0">Happy Birthday Asma! 🎂❤️</h1>
+
+    <div class="message-cycle" aria-live="polite" aria-atomic="true">
+      Today, the world became more beautiful because you were born.<br />
+      اليوم، أشرقت الحياة بوجودك فيها.
+    </div>
+    
+    <input type="button" id="music-control" aria-pressed="true" aria-label="Pause background music" value="Pause Music">
+
+    <div id="yt-player"></div>
+  </header>
+
+  <section class="love-letter" aria-labelledby="love-letter-title" tabindex="0">
+    <h2 id="love-letter-title">💌 A Letter for You</h2>
+    <p id="typed-text" class="typed-text"></p>
+  </section>
+
+<section aria-labelledby="photo-memories-title" tabindex="0">
+  <h2 id="photo-memories-title">📸 Memories</h2>
+  <div class="gallery" aria-label="Photo Memories">
+    <img src="https://i.imgur.com/fM9xmNF.jpeg" alt="Photo memory" tabindex="0" />
+    <img src="https://i.imgur.com/8cCzOBy.jpeg" alt="Photo memory" tabindex="0" />
+    <img src="https://i.imgur.com/QOWs9jk.jpeg" alt="Photo memory" tabindex="0" />
+    <img src="https://i.imgur.com/K3qLL64.jpeg" alt="Photo memory" tabindex="0" />
+    <img src="https://i.imgur.com/ZBY279f.jpeg" alt="Photo memory" tabindex="0" />
+    <img src="https://i.imgur.com/g85iNOK.jpeg" alt="Photo memory" tabindex="0" />
+    <img src="https://i.imgur.com/0mPS5Dl.jpeg" alt="Photo memory" tabindex="0" />
+    <img src="https://i.imgur.com/oYugclA.jpeg" alt="Photo memory" tabindex="0" />
+    <img src="https://i.imgur.com/ExHs1SX.jpeg" alt="Photo memory" tabindex="0" />
+
+  </div>
+  <p style="text-align:center; margin-top: 1rem; font-style: italic;"></p>
+</section>
+<section class="love-notes" id="love-notes">
+  <h2>💌 Tiny Love Notes Between Us</h2>
+  <div id="note-bubble" aria-live="polite">
+    You make the world brighter just by being in it ✨
+  </div>
+
+  <div class="note-form">
+    <input type="text" id="custom-note" placeholder="Write your own love note 💖" maxlength="120" />
+    <button id="add-note-btn">Send 💌</button>
+  </div>
+
+  <p id="note-confirm" style="display:none;">Your note was added! 💕</p>
+</section>
+
+<section class="quiz-section" id="quiz">
+  <h2>💕 How Well Do You Know Omar? 💕</h2>
+
+  <div class="question" data-correct="b">
+    <p>1. What’s Omar’s favorite thing about Asma?</p>
+    <div class="answers">
+      <button>A. Her cooking 🍳</button>
+      <button>B. Her smile 😊</button>
+      <button>C. Her shoes 👠</button>
+    </div>
+  </div>
+
+  <div class="question" data-correct="c">
+    <p>2. Where would Omar love to travel with Asma?</p>
+    <div class="answers">
+      <button>A. The desert 🏜️</button>
+      <button>B. Antarctica ❄️</button>
+      <button>C. Paris, the city of love 🇫🇷❤️</button>
+    </div>
+  </div>
+
+  <div class="question" data-correct="a">
+    <p>3. When did Omar first say "I love you"?</p>
+    <div class="answers">
+      <button>A. When he couldn’t stop smiling at her 💬</button>
+      <button>B. On her birthday 🎂</button>
+      <button>C. After a cute fight 😆</button>
+    </div>
+  </div>
+
+  <div class="question" data-correct="b">
+    <p>4. What’s Omar’s dream date with Asma?</p>
+    <div class="answers">
+      <button>A. Gaming night 🎮</button>
+      <button>B. Stargazing and cuddling 🌌💕</button>
+      <button>C. Climbing a mountain 🏔️</button>
+    </div>
+  </div>
+
+  <div class="question" data-correct="a">
+    <p>5. What does Omar think when he looks at Asma?</p>
+    <div class="answers">
+      <button>A. "How did I get so lucky?" 🍀❤️</button>
+      <button>B. "She needs coffee ☕"</button>
+      <button>C. "Did she change her hair?" 💇‍♀️</button>
+    </div>
+  </div>
+
+  <div class="question" data-correct="c">
+    <p>6. What is one of Omar’s sweetest dreams?</p>
+    <div class="answers">
+      <button>A. Becoming a chef for her 👨‍🍳</button>
+      <button>B. Owning a cat café 🐱☕</button>
+      <button>C. Waking up next to Asma every morning ☀️💞</button>
+    </div>
+  </div>
+
+  <div class="question" data-correct="b">
+    <p>7. What’s something Omar admires most about Asma?</p>
+    <div class="answers">
+      <button>A. Her jokes 😂</button>
+      <button>B. Her heart and kindness 💗</button>
+      <button>C. Her fashion style 👗</button>
+    </div>
+  </div>
+
+  <div id="quiz-result"></div>
+</section>
+
+
+<section class="memory-game" id="memory-game">
+  <h2>🧠 Match the Love Hearts 💖</h2>
+  <div class="game-grid" id="game-grid"></div>
+  <p id="game-status"></p>
+</section>
+
+
+  <section aria-labelledby="secret-surprise-title" tabindex="0" style="max-width: 600px; margin: 4rem auto;">
+    <h2 id="secret-surprise-title">🎁 Secret Surprise</h2>
+    <input
+      id="password-input"
+      type="password"
+      placeholder="Enter password to unlock surprise"
+      aria-label="Enter password to unlock surprise"
+      autocomplete="off"
+    />
+    <button id="unlock-btn" aria-describedby="password-input" aria-expanded="false">
+      Unlock Surprise
+    </button>
+    <div id="surprise" role="alert" tabindex="0" aria-live="assertive" aria-hidden="true">
+      🎉 Surprise! I love you more every day, and I can't wait to spend forever with you. 💖
+    </div>
+  </section>
+
+  <footer style="text-align:center; margin: 3rem auto; font-size: 1rem; color: #ffd6e8;">
+    Made with ❤️ by Omar | Joyeux anniversaire Asma 🎉 | عيد ميلاد سعيد أسْماء
+  </footer>
+
+  <!-- Modal for image preview -->
+  <div id="modal" tabindex="-1" aria-modal="true" role="dialog" aria-label="Enlarged photo view">
+    <img src="" alt="Enlarged photo" />
+  </div>        
+
+  <script>
+    // Typed text animation for the love letter
+    const typedText = 'My dearest Asma' + ',\n\n' +
+      'I\'m so grateful for your presence in my life. Your smile brightens even the darkest days,\n' +
+      'and your love makes me feel alive. I can\'t wait to make more memories with you.\n' +
+      'You are my today and all of my tomorrows.\n\n' +
+      'Love you always,\n' +
+      '— Your Omar 💖';
+
+
+    const typedTextEl = document.getElementById('typed-text');
+    let index = 0;
+
+    function typeLetter() {
+      if (index < typedText.length) {
+        typedTextEl.textContent += typedText.charAt(index);
+        index++;
+        setTimeout(typeLetter, 40);
+      }
+    }
+    typeLetter();
+
+    // Music toggle for background audio (robust, after DOM loaded)
+    document.addEventListener('DOMContentLoaded', function() {
+      const musicBtn = document.getElementById('music-control');
+      const bgMusic = document.getElementById('bg-music');
+      let isMusicPlaying = !bgMusic.paused;
+      // Set initial button state
+      function updateMusicBtn() {
+        musicBtn.value = isMusicPlaying ? 'Pause Music' : 'Play Music';
+        musicBtn.setAttribute('aria-pressed', isMusicPlaying ? 'true' : 'false');
+        musicBtn.setAttribute('aria-label', isMusicPlaying ? 'Pause background music' : 'Play background music');
+      }
+      updateMusicBtn();
+      musicBtn.addEventListener('click', function() {
+        if (isMusicPlaying) {
+          bgMusic.pause();
+          isMusicPlaying = false;
+          updateMusicBtn();
+        } else {
+          // Some browsers require user interaction for play()
+          bgMusic.play().then(() => {
+            isMusicPlaying = true;
+            updateMusicBtn();
+          }).catch((e) => {
+            isMusicPlaying = false;
+            updateMusicBtn();
+            alert('Unable to play music: ' + e.message + '\nIf you have another audio/video playing, please pause it and try again.');
+          });
+        }
+      });
+    });
+    
+    // Scroll reveal for sections
+    const sections = document.querySelectorAll('section');
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+        }
+      });
+    }, { threshold: 0.1 });
+    sections.forEach(section => observer.observe(section));
+
+    // Modal image preview
+    const modal = document.getElementById('modal');
+    const modalImg = modal.querySelector('img');
+    const galleryImgs = document.querySelectorAll('.gallery img');
+
+    galleryImgs.forEach(img => {
+      img.addEventListener('click', () => {
+        modalImg.src = img.src;
+        modalImg.alt = img.alt;
+        modal.classList.add('visible');
+        modal.focus();
+      });
+      img.addEventListener('keypress', e => {
+        if (e.key === 'Enter' || e.key === ' ') {
+          e.preventDefault();
+          img.click();
+        }
+      });
+    });
+
+    modal.addEventListener('click', () => {
+      modal.classList.remove('visible');
+      modalImg.src = '';
+      modalImg.alt = '';
+    });
+    modal.addEventListener('keydown', e => {
+      if (e.key === 'Escape') {
+        modal.classList.remove('visible');
+        modalImg.src = '';
+        modalImg.alt = '';
+      }
+    });
+
+    // Secret surprise unlock
+    const unlockBtn = document.getElementById('unlock-btn');
+    const passwordInput = document.getElementById('password-input');
+    const surprise = document.getElementById('surprise');
+    const correctPassword = '19/01/2025';
+
+    unlockBtn.addEventListener('click', () => {
+      if (passwordInput.value.trim().toLowerCase() === correctPassword) {
+        surprise.style.display = 'block';
+        surprise.setAttribute('aria-hidden', 'false');
+        surprise.focus();
+        unlockBtn.setAttribute('aria-expanded', 'true');
+      } else {
+        alert('Oops! Wrong password. Try again ❤️');
+      }
+      passwordInput.value = '';
+    });
+
+    // Floating hearts animation generator
+    function createHeart() {
+      const heart = document.createElement('div');
+      heart.classList.add('heart');
+      heart.style.left = Math.random() * window.innerWidth + 'px';
+      heart.style.animationDuration = (4 + Math.random() * 3) + 's';
+      heart.style.opacity = 0.6 + Math.random() * 0.4;
+      document.body.appendChild(heart);
+      setTimeout(() => {
+        heart.remove();
+      }, 7000);
+    }
+    setInterval(createHeart, 400);
+      // Quiz logic
+  const questions = document.querySelectorAll('.quiz-section .question');
+  let score = 0;
+  let answered = 0;
+
+  questions.forEach(q => {
+    const correct = q.dataset.correct;
+    const buttons = q.querySelectorAll('button');
+    buttons.forEach((btn, i) => {
+      btn.addEventListener('click', () => {
+        if (btn.disabled) return;
+        buttons.forEach(b => b.disabled = true);
+        const letter = ['a', 'b', 'c'][i];
+        if (letter === correct) {
+          score++;
+          btn.style.background = '#4CAF50';
+        } else {
+          btn.style.background = '#f44336';
+        }
+        answered++;
+        if (answered === questions.length) {
+          const result = document.getElementById('quiz-result');
+          result.textContent = `You got ${score} out of ${questions.length} right, 7boubti! 💖`;
+        }
+      });
+    });
+  });
+  const notes = [
+  "You make the world brighter just by being in it ✨",
+  "Your smile is my favorite view 💫",
+  "Even the stars envy your sparkle 🌟",
+  "Every day with you feels like a fairytale 🏰💖",
+  "You are the sweetest part of my life 🍯",
+  "If I had one wish, it would be to relive every moment with you 💭",
+  "You're the melody in my every song 🎶",
+  "I fall in love with you a little more every time I hear your voice 💘",
+  "You are my forever favorite person 💌",
+  "Just thinking of you makes everything better 🌸",
+  "Loving you is my most beautiful habit 💕",
+  "If kisses were stars, I'd give you the galaxy 💋🌌"
+];
+
+const noteBubble = document.getElementById('note-bubble');
+let noteIndex = 0;
+
+function showNextNote() {
+  noteIndex = (noteIndex + 1) % notes.length;
+  noteBubble.textContent = notes[noteIndex];
+  noteBubble.style.animation = 'none';
+  void noteBubble.offsetWidth;
+  noteBubble.style.animation = 'fadeNote 1.2s ease-in-out';
+}
+setInterval(showNextNote, 5000);
+
+// Add custom note
+const addNoteBtn = document.getElementById('add-note-btn');
+const customNoteInput = document.getElementById('custom-note');
+const noteConfirm = document.getElementById('note-confirm');
+
+addNoteBtn.addEventListener('click', () => {
+  const newNote = customNoteInput.value.trim();
+  if (newNote && newNote.length <= 120) {
+    notes.push(newNote + ' 💌');
+    customNoteInput.value = '';
+    noteConfirm.style.display = 'block';
+    setTimeout(() => {
+      noteConfirm.style.display = 'none';
+    }, 3000);
+  }
+});
+const emojis = ['💖','💖','💘','💘','❤️','❤️','💕','💕','🌸','🌸','💞','💞','🎀','🎀','🥰','🥰'];
+let shuffled = emojis.sort(() => 0.5 - Math.random());
+const grid = document.getElementById('game-grid');
+const status = document.getElementById('game-status');
+
+let first = null;
+let second = null;
+let matchedPairs = 0;
+
+shuffled.forEach((emoji, index) => {
+  const card = document.createElement('div');
+  card.classList.add('card');
+  card.setAttribute('data-emoji', emoji);
+  card.setAttribute('tabindex', '0');
+  card.addEventListener('click', flipCard);
+  card.addEventListener('keypress', e => {
+    if (e.key === 'Enter' || e.key === ' ') flipCard.call(card);
+  });
+  grid.appendChild(card);
+});
+
+function flipCard() {
+  if (this.classList.contains('revealed') || second) return;
+  this.textContent = this.dataset.emoji;
+  this.classList.add('revealed');
+
+  if (!first) {
+    first = this;
+  } else {
+    second = this;
+    if (first.dataset.emoji === second.dataset.emoji) {
+      first = null;
+      second = null;
+      matchedPairs++;
+      if (matchedPairs === emojis.length / 2) {
+        status.textContent = "Yay! You matched them all! I loves your mamati 💘💘💘";
+      }
+    } else {
+      setTimeout(() => {
+        first.textContent = '';
+        second.textContent = '';
+        first.classList.remove('revealed');
+        second.classList.remove('revealed');
+        first = null;
+        second = null;
+      }, 800);
+    }
+  }
+}
+
+    
+
+
+  </script>
+</body>
+</html> 
